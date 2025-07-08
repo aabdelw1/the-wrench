@@ -1,0 +1,116 @@
+/* MembershipTiers.css */
+.membership-tiers {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.tier-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.tier-card:hover {
+  transform: translateY(-10px);
+}
+
+.tier-card.popular {
+  border: 3px solid #e74c3c;
+  transform: scale(1.05);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #e74c3c;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.tier-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.price {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #e74c3c;
+  margin-bottom: 15px;
+}
+
+.price span {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+}
+
+.tier-description {
+  color: #7f8c8d;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+.tier-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.tier-features li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ecf0f1;
+  color: #555;
+}
+
+.tier-features li:last-child {
+  border-bottom: none;
+}
+
+.select-plan-btn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.3s ease;
+  font-weight: bold;
+}
+
+.select-plan-btn:hover {
+  background: #c0392b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .tiers-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tier-card.popular {
+    transform: none;
+  }
+  
+  .price {
+    font-size: 2.5rem;
+  }
+}
