@@ -1,7 +1,58 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './MembershipPage.css';
 
 const MembershipPage: React.FC = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  const perks = [
+    {
+      title: "✅ Perks Rollover Monthly",
+      description: "Unused hours roll over as long as your subscription is active — and there's no cap on how many."
+    },
+    {
+      title: "💰 Save More Every Month",
+      description: "The cost of membership saves you money on services and rentals — essentially paying for itself."
+    },
+    {
+      title: "🚗 DIY Car Wash & Clean-Up Area",
+      description: "Members get access to foam cannons, high-pressure washes, and vacuums — Sundays only."
+    },
+    {
+      title: "🔧 Free Perks",
+      description: "Like free storage hours and usage credits — adding value to each plan."
+    },
+    {
+      title: "📅 Exclusive Car Care Events",
+      description: "Workshops, meetups, and hands-on sessions only for members."
+    },
+    {
+      title: "📊 Unlimited ALLDATA Access",
+      description: "ALLDATA gives you professional repair guides and diagnostics, helping you fix cars with confidence."
+    }
+  ];
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % perks.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + perks.length) % perks.length);
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'ArrowRight') {
+        nextSlide();
+      } else if (event.key === 'ArrowLeft') {
+        prevSlide();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
+
   return (
     <div className="membership-page">
       <header className="membership-hero">
@@ -66,31 +117,29 @@ const MembershipPage: React.FC = () => {
       <section className="membership-perks">
         <div className="container">
           <h2 className="section-title">🏁 Extra Membership Perks (All Tiers)</h2>
-          <div className="perks-grid">
-            <div className="perk-card">
-              <h4>✅ Perks Rollover Monthly</h4>
-              <p>Unused hours roll over as long as your subscription is active — and there's no cap on how many.</p>
+          <div className="perks-carousel">
+            <button className="carousel-btn carousel-btn-left" onClick={prevSlide}>
+              &#8249;
+            </button>
+            <div className="perks-container">
+              <div 
+                className="perks-track" 
+                style={{ 
+                  transform: `translateX(-${currentSlide * (100 / 3)}%)`,
+                  transition: 'transform 0.5s ease-in-out'
+                }}
+              >
+                {perks.map((perk, index) => (
+                  <div key={index} className="perk-card">
+                    <h4>{perk.title}</h4>
+                    <p>{perk.description}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="perk-card">
-              <h4>💰 Save More Every Month</h4>
-              <p>The cost of membership saves you money on services and rentals — essentially paying for itself.</p>
-            </div>
-            <div className="perk-card">
-              <h4>🚗 DIY Car Wash & Clean-Up Area</h4>
-              <p>Members get access to foam cannons, high-pressure washes, and vacuums — Sundays only.</p>
-            </div>
-            <div className="perk-card">
-              <h4>🔧 Free Perks</h4>
-              <p>Like free storage hours and usage credits — adding value to each plan.</p>
-            </div>
-            <div className="perk-card">
-              <h4>📅 Exclusive Car Care Events</h4>
-              <p>Workshops, meetups, and hands-on sessions only for members.</p>
-            </div>
-            <div className="perk-card">
-              <h4>📊 Unlimited ALLDATA Access</h4>
-              <p>ALLDATA gives you professional repair guides and diagnostics, helping you fix cars with confidence.</p>
-            </div>
+            <button className="carousel-btn carousel-btn-right" onClick={nextSlide}>
+              &#8250;
+            </button>
           </div>
         </div>
       </section>
