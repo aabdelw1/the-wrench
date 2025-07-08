@@ -1,11 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './NavBar.css';
 
-interface NavBarProps {
-  setCurrentPage: (page: string) => void;
-}
-
-const NavBar: React.FC<NavBarProps> = ({ setCurrentPage }) => {
+const NavBar: React.FC = () => {
   return (
     <nav className="navbar">
       <div className="nav-container">
@@ -14,16 +11,16 @@ const NavBar: React.FC<NavBarProps> = ({ setCurrentPage }) => {
         </div>
         <ul className="nav-menu">
           <li className="nav-item">
-            <button onClick={() => setCurrentPage('home')} className="nav-link">Home</button>
+            <Link to="/" className="nav-link">Home</Link>
           </li>
           <li className="nav-item">
-            <button onClick={() => setCurrentPage('services')} className="nav-link">Other Services</button>
+            <Link to="/services" className="nav-link">Other Services</Link>
           </li>
           <li className="nav-item">
-            <button onClick={() => setCurrentPage('membership')} className="nav-link">Membership</button>
+            <Link to="/membership" className="nav-link">Membership</Link>
           </li>
           <li className="nav-item">
-            <button onClick={() => setCurrentPage('policies')} className="nav-link">Policies & Info</button>
+            <Link to="/policies" className="nav-link">Policies & Info</Link>
           </li>
         </ul>
         <div className="nav-auth">
