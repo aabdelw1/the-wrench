@@ -1,46 +1,116 @@
-# Getting Started with Create React App
+# The Wrench 🔧
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**DIY Automotive Workspace Rental Service**
 
-## Available Scripts
+The Wrench is a modern web platform for a DIY automotive workspace where car enthusiasts can rent professional-grade car lifts, work bays, and tools by the hour to service or repair their own vehicles.
 
-In the project directory, you can run:
+## 🚗 What We Offer
 
-### `npm start`
+### Hourly Rentals
+- **Car Lifts**: Professional hydraulic lifts for safe undercarriage access
+- **Work Bays**: Fully equipped workspaces with proper lighting and ventilation
+- **Tool Rental**: Complete sets of automotive tools and equipment
+- **Flexible Pricing**: Pay only for the time you need
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Pit Crew Membership Program
+Our membership tiers offer incredible value for regular users:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **Base Tune ($25/month)**: Perfect for beginners - 1 hour lift/tools + storage
+- **Stage 1 ($45/month)**: Most popular - 2 hours lift/tools + car wash access
+- **Stage 2+ ($65/month)**: For serious users - 4 hours + exclusive events
 
-### `npm test`
+### Additional Perks
+- **Rollover Hours**: Unused time never expires
+- **Car Storage**: Secure overnight storage for projects
+- **DIY Car Wash**: Professional wash bays (Sundays only)
+- **ALLDATA Access**: Professional repair guides and diagnostics
+- **Exclusive Events**: Workshops, meetups, and hands-on sessions
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🛠 Tech Stack
 
-### `npm run build`
+- **Frontend**: React 18 with TypeScript
+- **Routing**: React Router v6
+- **Styling**: Modular CSS with component-based architecture
+- **Build Tool**: Create React App
+- **UI Features**: Responsive design, animated carousels, keyboard navigation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📁 Project Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+src/
+├── components/
+│   ├── membership/           # Membership page components
+│   │   ├── components/       # Individual section components
+│   │   ├── styles/          # Component-specific CSS
+│   │   └── MembershipPage.tsx
+│   ├── HomePage.tsx         # Landing page
+│   └── NavBar.tsx          # Navigation component
+└── App.tsx                 # Main app with routing
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🚀 Getting Started
 
-### `npm run eject`
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Installation
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone the repository:
+```bash
+git clone https://github.com/your-username/the-wrench.git
+cd the-wrench
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+3. Start the development server:
+```bash
+npm start
+```
 
-## Learn More
+4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📜 Available Scripts
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- `npm start` - Runs the app in development mode
+- `npm test` - Launches the test runner
+- `npm run build` - Builds the app for production
+- `npm run eject` - Ejects from Create React App (one-way operation)
+
+## 🎯 Features
+
+- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile
+- **Interactive Carousel**: Smooth animations with keyboard navigation support
+- **Modern UI**: Clean, professional design with hover effects and transitions
+- **Modular Architecture**: Well-organized components for easy maintenance
+- **SEO Friendly**: Proper routing and semantic HTML structure
+
+## 🎨 Design Highlights
+
+- **Color Scheme**: Professional dark blues with red accents
+- **Typography**: Clean, readable fonts optimized for web
+- **Animations**: Smooth transitions and hover effects
+- **User Experience**: Intuitive navigation and clear call-to-actions
+
+## 🔮 Future Enhancements
+
+- User authentication and booking system
+- Payment integration for memberships
+- Real-time availability calendar
+- User dashboard for tracking usage
+- Mobile app development
+
+## 📞 Contact
+
+For more information about The Wrench services:
+- **Phone**: (555) 123-LIFT
+- **Email**: info@thewrench.com
+- **Location**: 123 Garage St, Auto City
+
+---
+
+*Built with ❤️ for the DIY automotive community*
